@@ -52,7 +52,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-7 pt-16 pb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
         {/* Brand Column */}
-        <div className="lg:col-span-1 flex flex-col gap-5">
+        <div className="lg:col-span-1 flex flex-col gap-5 min-w-0">
 
           {/* Logo */}
           <a href="/" className="flex items-center gap-2.5 no-underline w-fit">
@@ -73,11 +73,11 @@ const Footer = () => {
           {/* Newsletter */}
           <div className="flex flex-col gap-2">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">Get job alerts in your inbox</p>
-            <div className="flex">
+            <div className="flex w-full min-w-0">
               <input
                 type="email"
                 placeholder="your@email.com"
-                className="flex-1 bg-gray-900 border border-gray-800 border-r-0 rounded-l-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-600 outline-none focus:border-blue-600 transition-colors"
+                className="min-w-0 flex-1 bg-gray-900 border border-gray-800 border-r-0 rounded-l-lg px-4 py-2.5 text-sm text-slate-200 placeholder-slate-600 outline-none focus:border-blue-600 transition-colors"
               />
               <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-bold px-4 py-2.5 rounded-r-lg transition-colors whitespace-nowrap">
                 Subscribe
@@ -98,7 +98,7 @@ const Footer = () => {
 
         {/* Link Columns */}
         {Object.entries(footerLinks).map(([title, links]) => (
-          <div key={title} className="flex flex-col gap-3">
+          <div key={title} className="flex flex-col gap-3 min-w-0">
             <h4 className="text-xs font-bold text-slate-300 uppercase tracking-widest mb-1">{title}</h4>
             {links.map(({ label, href, badge }) => (
               <a key={label} href={href}
