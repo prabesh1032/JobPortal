@@ -16,7 +16,7 @@ const Navbar = () => {
             {/* Top announcement bar */}
             <div className="bg-gray-900 text-gray-400 text-sm py-1.5 px-6 flex items-center justify-center gap-2">
                 <Info size={13} className="text-blue-400" />
-                <span className="text-white font-medium">1,200+ jobs</span> available this week ·
+                <span className="text-white font-medium">1200+ jobs</span> available this week ·
                 <a href="/jobs" className="text-blue-400 font-semibold hover:underline">Browse all →</a>
             </div>
 
