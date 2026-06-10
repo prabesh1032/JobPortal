@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ApplicationController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
@@ -56,3 +57,14 @@ Route::get('/saved-jobs', [SavedJobController::class, 'index'])->name('saved-job
 Route::post('/saved-jobs', [SavedJobController::class, 'store'])->name('saved-jobs.store');
 Route::get('/saved-jobs/{savedJob}', [SavedJobController::class, 'show'])->name('saved-jobs.show');
 Route::delete('/saved-jobs/{savedJob}', [SavedJobController::class, 'destroy'])->name('saved-jobs.destroy');
+
+
+// Auth Routes
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
+
+// Protected Auth Routes
+Route::middleware('auth:sanctum')->group(function () {
+    Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+    Route::get('/me', [AuthController::class, 'me'])->name('auth.me');
+});
