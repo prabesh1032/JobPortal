@@ -1,0 +1,23 @@
+<?php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class RecruiterProfile extends Model
+{
+    protected $fillable = [
+        'user_id',
+        'company_name',
+        'company_logo',
+        'company_website',
+        'company_description',
+        'industry',
+        'company_size',
+    ];
+
+    // Relationship — recruiter profile belongs to a user
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}

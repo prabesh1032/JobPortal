@@ -99,7 +99,7 @@ const Home = () => {
   return (
     <div className="bg-gray-50 min-h-screen">
 
-      {/* ✅ Using HeroSection component */}
+      {/*  Using HeroSection component */}
       <HeroSection />
 
       {/* Browse by Category */}
